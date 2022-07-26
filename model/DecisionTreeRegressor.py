@@ -7,8 +7,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import export_text
 from model.model import Model
 from sklearn import tree
-from tmp_draw import Draw
-
 class DecisionTreeRegressor(Model):
     def __init__(self, sample_list, labeler, n_feature, n_output, raw_list):
         super().__init__(sample_list, labeler)
@@ -151,7 +149,6 @@ class DecisionTreeRegressor(Model):
             predict_time = max(0, self.predict(i))
             predict_time = 2 ** predict_time - 1
             actual_time = i.actual_sec
-            print(i)
             # print(str(predict_time),str(actual_time))
             # execution_time = self.raw_list[i.id].end_ts - self.raw_list[i.id].start_ts
             # rate = abs(predict_time - actual_time) / (actual_time + execution_time) + rate

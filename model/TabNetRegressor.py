@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import export_text
 from model.model import Model
 from sklearn import tree
-from tmp_draw import Draw
 import torch
 import numpy as np
 import pytorch_tabnet
@@ -66,7 +65,7 @@ class TabNetRegressor(Model):
                 continue
             X_train, X_valid, y_train, y_valid = train_test_split(
                 train_list[i], label_list[i],
-                train_size=0.80, test_size=0.20, random_state=188
+                train_size=0.75, test_size=0.25
             )
             X_train = np.array(X_train)
             y_train = np.array(y_train)
